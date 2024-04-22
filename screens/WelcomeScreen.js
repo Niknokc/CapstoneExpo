@@ -130,7 +130,8 @@ export default function WelcomeScreen({navigation}) {
         <Animated.View style={{ width: searchWidth.interpolate({ inputRange: [0, 1], outputRange: ['5%', '97%'] }) }}>
           <Pressable onPress={animateSearchBar} style={{flexDirection: "row" }}>
             <Image source={search} style={styles.searchIcon} />
-            <TextInput style={[styles.searchInput]} placeholder="Search..." value={searchString}
+            <TextInput style={[styles.searchInput]} placeholder="Search..." value={searchString} 
+            clearButtonMode="unless-editing"
             onChangeText={text => {
               setSearchString(text);
               debouncedHandlePress(undefined, text);
